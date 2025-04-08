@@ -29,17 +29,17 @@ def PrintSensorTargets(targets):
         if targets:
             #print("*********Detected something...")
             for i, target in enumerate(targets):
-                print(f" x: {target.xPosCm} cm, y: {target.yPosCm} cm, z: {target.zPosCm} cm")
-                f.write(f'  x: {target.xPosCm} cm, y: {target.yPosCm} cm, z: {target.zPosCm} cm\n')
+                print(f" x: {target.xPosCm} cm, y: {target.yPosCm} cm, z: {target.zPosCm} cm, a: {target.amplitude} cm")
+                f.write(f'  x: {target.xPosCm} cm, y: {target.yPosCm} cm, z: {target.zPosCm} cm, a: {target.amplitude} cm\n')
         else:
             print("No Target Detected")
             f.write('No Target Detected\n')
 
 def InWallApp():
     # wlbt.SetArenaX - input parameters
-    xArenaMin, xArenaMax, xArenaRes = -3, 4, 0.5
+    xArenaMin, xArenaMax, xArenaRes = -2, 2, 0.5
     # wlbt.SetArenaY - input parameters
-    yArenaMin, yArenaMax, yArenaRes = -6, 4, 0.5
+    yArenaMin, yArenaMax, yArenaRes = -3, 2, 0.5
     # wlbt.SetArenaZ - input parameters
     zArenaMin, zArenaMax, zArenaRes = 3, 8, 0.5
     # Initializes walabot lib
