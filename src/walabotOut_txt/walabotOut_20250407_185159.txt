@@ -1,0 +1,89 @@
+No Target Detected, , a: {target.amplitude}
+  x: -0.6893654271085456 cm, y: -0.12155372436685148 cm, z: 8.0 cm, a: 14.40296464938972 cm
+  x: 0.0 cm, y: -0.0 cm, z: 8.0 cm, a: 13.946980651516482 cm
+  x: 0.0 cm, y: -0.0 cm, z: 8.0 cm, a: 13.729783619017274 cm
+  x: -0.6893654271085456 cm, y: -0.12155372436685148 cm, z: 8.0 cm, a: 13.780457001285114 cm
+  x: -0.6893654271085456 cm, y: -0.12155372436685148 cm, z: 8.0 cm, a: 14.244419127880928 cm
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+  x: 0.6062177826491069 cm, y: 0.3500000000000003 cm, z: 8.0 cm, a: 55.04784061709826 cm
+  x: -0.6893654271085456 cm, y: 0.12155372436685101 cm, z: 8.0 cm, a: 50.650408757673915 cm
+  x: -0.6577848345501359 cm, y: 0.23941410032796806 cm, z: 8.0 cm, a: 53.23908224154079 cm
+  x: 0.0 cm, y: -0.0 cm, z: 8.0 cm, a: 56.44276919885476 cm
+  x: 0.7000000000000001 cm, y: -0.0 cm, z: 8.0 cm, a: 58.879439822733026 cm
+  x: 0.6893654271085456 cm, y: 0.12155372436685127 cm, z: 8.0 cm, a: 59.90041318960736 cm
+  x: 0.6893654271085456 cm, y: 0.12155372436685127 cm, z: 8.0 cm, a: 59.53249783498312 cm
+  x: 0.6893654271085456 cm, y: 0.12155372436685127 cm, z: 8.0 cm, a: 59.471540539685726 cm
+  x: 0.6893654271085456 cm, y: 0.12155372436685127 cm, z: 8.0 cm, a: 59.53416492061713 cm
+  x: 0.6893654271085456 cm, y: 0.12155372436685127 cm, z: 8.0 cm, a: 59.36353288571141 cm
+  x: 0.6893654271085456 cm, y: 0.12155372436685127 cm, z: 8.0 cm, a: 59.3452467007766 cm
+  x: 0.6893654271085456 cm, y: 0.12155372436685127 cm, z: 8.0 cm, a: 59.23894119412439 cm
+  x: 0.6893654271085456 cm, y: 0.12155372436685127 cm, z: 8.0 cm, a: 58.97505843888666 cm
+  x: 1.4000000000000001 cm, y: 3.4290110376125893e-16 cm, z: 8.0 cm, a: 58.873701913859 cm
+  x: 1.3787308542170913 cm, y: 0.24310744873370255 cm, z: 8.0 cm, a: 59.19939289670972 cm
+  x: 1.3787308542170913 cm, y: 0.24310744873370255 cm, z: 8.0 cm, a: 59.13425043893057 cm
+  x: 0.6893654271085456 cm, y: 0.12155372436685127 cm, z: 8.0 cm, a: 59.25145351567627 cm
+  x: -0.6893654271085456 cm, y: -0.12155372436685148 cm, z: 8.0 cm, a: 55.37537162428515 cm
+  x: -1.4000000000000001 cm, y: -1.7145055188062946e-16 cm, z: 8.0 cm, a: 57.580731104134784 cm
+  x: -0.6893654271085456 cm, y: 0.12155372436685101 cm, z: 8.0 cm, a: 54.74026643810898 cm
+  x: 0.6893654271085456 cm, y: 0.12155372436685127 cm, z: 8.0 cm, a: 52.12165036568956 cm
+  x: 0.6893654271085456 cm, y: 0.12155372436685127 cm, z: 8.0 cm, a: 53.699749077471935 cm
+  x: 0.6893654271085456 cm, y: 0.12155372436685127 cm, z: 8.0 cm, a: 53.06417119860954 cm
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+  x: 0.0 cm, y: -0.0 cm, z: 8.0 cm, a: 13.79240633833902 cm
+  x: -0.6893654271085456 cm, y: -0.12155372436685148 cm, z: 8.0 cm, a: 14.385443507756762 cm
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+  x: -0.6577848345501358 cm, y: -0.23941410032796823 cm, z: 8.0 cm, a: 14.02253227753209 cm
+  x: -0.0 cm, y: 0.0 cm, z: 8.0 cm, a: 13.97469942844594 cm
+  x: 0.0 cm, y: -0.0 cm, z: 8.0 cm, a: 14.55084008408906 cm
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+  x: 1.9733545036504072 cm, y: 0.7182423009839058 cm, z: 8.0 cm, a: 62.60373352065743 cm
+  x: 0.6577848345501357 cm, y: 0.23941410032796862 cm, z: 8.0 cm, a: 58.62462514603624 cm
+  x: -0.6893654271085456 cm, y: -0.12155372436685148 cm, z: 8.0 cm, a: 54.685976338852655 cm
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+  x: -0.6893654271085456 cm, y: -0.12155372436685148 cm, z: 8.0 cm, a: 15.172333218187624 cm
+  x: -0.6577848345501358 cm, y: -0.23941410032796823 cm, z: 8.0 cm, a: 14.129187574207249 cm
+  x: 0.6062177826491071 cm, y: -0.35 cm, z: 8.0 cm, a: 15.14749334717401 cm
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+  x: -0.6893654271085456 cm, y: -0.12155372436685148 cm, z: 8.0 cm, a: 14.677189210585182 cm
+  x: -0.6577848345501358 cm, y: -0.23941410032796823 cm, z: 8.0 cm, a: 14.90017030079735 cm
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+  x: -0.6577848345501359 cm, y: 0.23941410032796806 cm, z: 8.0 cm, a: 59.41654078408375 cm
+  x: 1.4000000000000001 cm, y: -0.0 cm, z: 8.0 cm, a: 59.08072217096671 cm
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+  x: 0.0 cm, y: -0.0 cm, z: 8.0 cm, a: 14.582001851792858 cm
+  x: 0.0 cm, y: -0.0 cm, z: 8.0 cm, a: 14.600604444844848 cm
+  x: -0.6893654271085456 cm, y: -0.12155372436685148 cm, z: 8.0 cm, a: 15.50034233008861 cm
+  x: -0.6577848345501358 cm, y: -0.23941410032796823 cm, z: 8.0 cm, a: 14.07448207467125 cm
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+  x: -0.6893654271085456 cm, y: -0.12155372436685148 cm, z: 8.0 cm, a: 18.679992466276055 cm
+  x: -0.6893654271085456 cm, y: -0.12155372436685148 cm, z: 8.0 cm, a: 16.77542691206212 cm
+  x: 0.0 cm, y: -0.0 cm, z: 8.0 cm, a: 15.816069988217418 cm
+  x: -0.6893654271085456 cm, y: -0.12155372436685148 cm, z: 8.0 cm, a: 16.587372883321958 cm
+  x: 0.0 cm, y: -0.0 cm, z: 8.0 cm, a: 17.023525024277113 cm
+  x: 0.0 cm, y: -0.0 cm, z: 8.0 cm, a: 16.808676241171696 cm
+  x: 0.0 cm, y: -0.0 cm, z: 8.0 cm, a: 16.735466233639674 cm
+  x: 0.0 cm, y: -0.0 cm, z: 8.0 cm, a: 16.099908342252565 cm
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
+No Target Detected, , a: {target.amplitude}
