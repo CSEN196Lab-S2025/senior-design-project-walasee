@@ -25,19 +25,19 @@ output_filename = join(output_dir, f'walabotOut_{timestamp}.txt')
 
 
 # Writes walabot output to a txt file
-def PrintSensorTargets(targets):
+def PrintSensorTargets(targets, L):
     with open(output_filename, 'a') as f:
-        
+        xVal = L + target.xPosCm
         if targets:
             #print("*********Detected something...")
             for i, target in enumerate(targets):
-                print(f" x: {target.xPosCm} cm, y: {target.yPosCm} cm, z: {target.zPosCm} cm, a: {target.amplitude} cm")
-                f.write(f'  x: {target.xPosCm} cm, y: {target.yPosCm} cm, z: {target.zPosCm} cm, a: {target.amplitude} cm\n')
+                print(f" x: {xVal} cm, y: {target.yPosCm} cm, z: {target.zPosCm} cm, a: {target.amplitude} cm")
+                f.write(f'  x: {xVal} cm, y: {target.yPosCm} cm, z: {target.zPosCm} cm, a: {target.amplitude} cm\n')
         else:
             print("No Target Detected")
             f.write('No Target Detected\n')
 
-def InWallApp():
+def InWallApp(spacing):
     # wlbt.SetArenaX - input parameters
     xArenaMin, xArenaMax, xArenaRes = -3, 4, 0.5
     # wlbt.SetArenaY - input parameters
@@ -75,9 +75,9 @@ def InWallApp():
         wlbt.Trigger()
 
     while True:
-        print("Type 1 to record wall image, type 2 to end program")
+        print("Press enter to record wall image, type 2 to end program")
         response = input()
-        if (response == 1):
+        if (response == ""):
             
             appStatus, calibrationProcess = wlbt.GetStatus()
             # 5) Trigger: Scan (sense) according to profile and record signals
@@ -87,12 +87,12 @@ def InWallApp():
             targets = wlbt.GetImagingTargets()
             rasterImage, _, _, sliceDepth, power = wlbt.GetRawImageSlice()
             # PrintSensorTargets(targets)
-            PrintSensorTargets(targets)
+            PrintSensorTargets(targets, xLength)
 
             i += 1
             if (i > 1):
-                xLength += 7
-        elif (response == 2):
+                xLength += spacing
+        elif (response == "2"):
             break
         else:
             print("Please type a valid input")
@@ -104,4 +104,6 @@ def InWallApp():
     print('Terminate successfully')
 
 if __name__ == '__main__':
-    InWallApp()
+    print("Please enter desired spacing: ")
+    spacing = input()
+    InWallApp(spacing)

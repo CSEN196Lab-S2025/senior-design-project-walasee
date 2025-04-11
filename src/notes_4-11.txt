@@ -1,0 +1,2 @@
+Notes on Walabot feedback:
+When not moving walabot, could detect sometimes, but other tiems returned not detected on repeated attempts
