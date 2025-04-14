@@ -65,12 +65,13 @@ def plot_data_matplotlib(x, y, save_path):
     plt.close()
     print(f"2D plot saved as: {save_path}")
 
-def PrintSensorTargets(targets, L):
+def PrintSensorTargets(targets, xL, yL): # add default spacing here
     with open(output_filename, 'a') as f:
         if targets:
             for i, target in enumerate(targets):
-                xVal = L + target.xPosCm
-                line = f"x: {xVal} cm, y: {target.yPosCm} cm, z: {target.zPosCm} cm, a: {target.amplitude} cm"
+                xVal = xL + target.xPosCm
+                yVal = yL + target.yPosCm
+                line = f"x: {xVal} cm, y: {yVal} cm, z: {target.zPosCm} cm, a: {target.amplitude} cm"
                 print(line)
                 f.write(line + '\n')
         else:
@@ -82,7 +83,7 @@ def InWallApp(spacing):
     yArenaMin, yArenaMax, yArenaRes = -6, 4, 0.5
     zArenaMin, zArenaMax, zArenaRes = 3, 8, 0.5
     xLength = -xArenaMin
-    i = 0
+    yLength = 0
 
     wlbt.Initialize()
     wlbt.ConnectAny()
@@ -102,17 +103,16 @@ def InWallApp(spacing):
             wlbt.Trigger()
 
     while True:
-        print("Press enter to record wall image, type 2 to end program, 3 to generate plots")
+        print("Press enter to record wall image, type 2 to end program, 3 to generate plots, or 4 to start new y line")
         response = input()
 
         if response == "":
             wlbt.Trigger()
             targets = wlbt.GetImagingTargets()
             wlbt.GetRawImageSlice()
-            PrintSensorTargets(targets, xLength)
-            i += 1
-            if i > 1:
-                xLength += float(spacing)
+            PrintSensorTargets(targets, xLength, yLength)
+            
+            xLength += float(spacing)
 
         elif response == "2":
             break
@@ -126,6 +126,20 @@ def InWallApp(spacing):
 
             plot_data_matplotlib(x, y, f"{outputs_dir}/{timestamp_for_file}.png")
             plot_data_plotly(x, y, z, f"{outputs_dir}/{timestamp_for_file}.html")
+        
+        elif response == "4":
+            print("Please specify height you moving by on wall. Use a negative to indicate moving down.")
+            yChange = input()
+            xLength = -xArenaMin
+            ylength += yChange
+
+            wlbt.Trigger()
+            targets = wlbt.GetImagingTargets()
+            wlbt.GetRawImageSlice()
+            PrintSensorTargets(targets, xLength, yLength)
+
+            xLength += float(spacing)
+
 
         else:
             print("Please type a valid input.")
