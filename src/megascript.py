@@ -69,17 +69,19 @@ def plot_data_matplotlib(x, y, is_hit, save_path):
     plt.close()
     print(f"2D plot saved as: {save_path}")
 
-def PrintSensorTargets(targets, L):
+def PrintSensorTargets(targets, xL, yL):
     with open(output_filename, 'a') as f:
         if targets:
             for target in targets:
-                xVal = L + target.xPosCm
-                line = f"x: {xVal} cm, y: {target.yPosCm} cm, z: {target.zPosCm} cm, a: {target.amplitude} cm"
+                xVal = xL + target.xPosCm
+                yVal = yL + target.yPosCm
+                line = f"x: {xVal} cm, y: {yVal} cm, z: {target.zPosCm} cm, a: {target.amplitude} cm"
                 print(line)
                 f.write(line + '\n')
         else:
-            xVal = L  # still increase L even if no hit
-            line = f"No Target Detected at x: {xVal} cm, y: 0.0 cm, z: 0.0 cm"
+            xVal = xL  # still increase L even if no hit
+            yVal = yL
+            line = f"No Target Detected at x: {xVal} cm, y: {yVal} cm, z: 0.0 cm"
             print(line)
             f.write(line + '\n')
 
@@ -115,7 +117,7 @@ def InWallApp(xspacing):
             wlbt.Trigger()
             targets = wlbt.GetImagingTargets()
             wlbt.GetRawImageSlice()
-            PrintSensorTargets(targets, xLength)
+            PrintSensorTargets(targets, xLength, yLength)
             xLength += float(xspacing)
 
         elif response == "2":
@@ -132,12 +134,12 @@ def InWallApp(xspacing):
         elif response == "4":
             print("Specify height you are moving by on wall. Use negative to indicate moving down")
             yChange = input()
-            yLength += yChange
+            yLength += float(yChange)
             wlbt.Trigger()
-            targets = wlbt.getImagingTargets()
+            targets = wlbt.GetImagingTargets()
             wlbt.GetRawImageSlice()
             PrintSensorTargets(targets, xLength, yLength)
-            xpacing = -xspacing
+            xspacing = -xspacing
 
         else:
             print("Please type a valid input.")
@@ -150,4 +152,4 @@ def InWallApp(xspacing):
 if __name__ == '__main__':
     print("Please enter desired spacing: ")
     xspacing = input()
-    InWallApp(xspacing)
+    InWallApp(float(xspacing))
