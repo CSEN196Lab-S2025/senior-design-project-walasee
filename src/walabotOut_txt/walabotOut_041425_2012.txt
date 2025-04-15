@@ -1,0 +1,65 @@
+x: 4.79980530712231 cm, y: 2.1449244407331385 cm, z: 8.0 cm, a: 29.52720000791708 cm
+x: 7.606217782649107 cm, y: -0.35 cm, z: 8.0 cm, a: 19.789521350792384 cm
+No Target Detected at x: 11.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: 0 cm, z: 0.0 cm
+x: 23.606217782649107 cm, y: -0.35 cm, z: 8.0 cm, a: 17.132902359804554 cm
+x: 27.606217782649107 cm, y: -0.35 cm, z: 8.0 cm, a: 17.560843770445288 cm
+x: 31.0 cm, y: 0.0 cm, z: 8.0 cm, a: 16.98166051656694 cm
+x: 35.606217782649104 cm, y: -0.35 cm, z: 8.0 cm, a: 19.050575390194343 cm
+No Target Detected at x: 39.0 cm, y: 0 cm, z: 0.0 cm
+x: 41.6 cm, y: -1.7145055188062946e-16 cm, z: 8.0 cm, a: 68.68301663091522 cm
+No Target Detected at x: 47.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 51.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 51.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 47.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 43.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -4.0 cm, z: 0.0 cm
+x: 33.6 cm, y: -4.0 cm, z: 8.0 cm, a: 67.3431931221612 cm
+No Target Detected at x: 31.0 cm, y: -4.0 cm, z: 0.0 cm
+x: 27.606217782649107 cm, y: -4.35 cm, z: 8.0 cm, a: 18.555436146912793 cm
+x: 23.606217782649107 cm, y: -4.35 cm, z: 8.0 cm, a: 16.89154247465956 cm
+No Target Detected at x: 19.0 cm, y: -4.0 cm, z: 0.0 cm
+x: 15.606217782649107 cm, y: -4.35 cm, z: 8.0 cm, a: 17.45428580380059 cm
+No Target Detected at x: 11.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 3.0 cm, y: -4.0 cm, z: 0.0 cm
+x: 3.0 cm, y: -8.0 cm, z: 8.0 cm, a: 20.765776148384774 cm
+x: 7.606217782649107 cm, y: -8.35 cm, z: 8.0 cm, a: 19.897568488345645 cm
+No Target Detected at x: 11.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -8.0 cm, z: 0.0 cm
+x: 19.536231110183284 cm, y: -8.449951326780578 cm, z: 8.0 cm, a: 17.411466031705576 cm
+x: 23.536231110183284 cm, y: -8.449951326780578 cm, z: 8.0 cm, a: 17.151140892566143 cm
+x: 27.536231110183284 cm, y: -8.449951326780578 cm, z: 8.0 cm, a: 17.674552867935763 cm
+x: 31.606217782649107 cm, y: -8.35 cm, z: 8.0 cm, a: 16.68833522969984 cm
+No Target Detected at x: 35.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 43.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 47.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 51.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 51.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 47.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 43.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -12.0 cm, z: 0.0 cm
+x: 33.6 cm, y: -12.0 cm, z: 8.0 cm, a: 67.25259935568367 cm
+No Target Detected at x: 31.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 11.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 3.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 3.0 cm, y: -24.0 cm, z: 0.0 cm
+x: 7.0 cm, y: -24.0 cm, z: 8.0 cm, a: 15.061893016996358 cm
+No Target Detected at x: 11.0 cm, y: -24.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -24.0 cm, z: 0.0 cm
+x: 20.608693330549855 cm, y: -22.650146019658266 cm, z: 8.0 cm, a: 42.478635118033786 cm
+x: 22.87844627563315 cm, y: -24.689365427108545 cm, z: 8.0 cm, a: 49.15780972015129 cm
+x: 27.0 cm, y: -24.7 cm, z: 8.0 cm, a: 46.68436609247221 cm
+x: 31.0 cm, y: -24.7 cm, z: 8.0 cm, a: 44.29081093113979 cm
+x: 35.0 cm, y: -25.4 cm, z: 8.0 cm, a: 43.921289423027204 cm
+x: 39.0 cm, y: -24.7 cm, z: 8.0 cm, a: 46.161827960597925 cm
+x: 41.95 cm, y: -25.818653347947322 cm, z: 8.0 cm, a: 56.01210276878122 cm
+No Target Detected at x: 47.0 cm, y: -24.0 cm, z: 0.0 cm
+No Target Detected at x: 51.0 cm, y: -24.0 cm, z: 0.0 cm
