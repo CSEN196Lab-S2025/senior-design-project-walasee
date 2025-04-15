@@ -11,5 +11,4 @@ AFTER YOU MAKE CHANGES TO YOUR CODE:
 - commit changes to your local branch
 - publish/push to your online branch
 - make a pull request
-- and finally merge all changes to the main.
-(idk the commands, figure it out lmao, or use github desktop)
+- and finally merge all changes to the main
