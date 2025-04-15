@@ -149,6 +149,6 @@ def InWallApp(xspacing): # add default xspacing here
     print('Terminated successfully')
 
 if __name__ == '__main__':
-    print("Please enter desired xspacing: ")
+    print("Please enter desired x spacing: ")
     xspacing = input()
     InWallApp(xspacing)
