@@ -65,7 +65,7 @@ def plot_data_matplotlib(x, y, save_path):
     plt.close()
     print(f"2D plot saved as: {save_path}")
 
-def PrintSensorTargets(targets, xL, yL): # add default spacing here
+def PrintSensorTargets(targets, xL, yL): 
     with open(output_filename, 'a') as f:
         if targets:
             for i, target in enumerate(targets):
@@ -78,7 +78,7 @@ def PrintSensorTargets(targets, xL, yL): # add default spacing here
             print("No Target Detected")
             f.write('No Target Detected\n')
 
-def InWallApp(spacing):
+def InWallApp(xspacing): # add default xspacing here
     xArenaMin, xArenaMax, xArenaRes = -3, 4, 0.5
     yArenaMin, yArenaMax, yArenaRes = -6, 4, 0.5
     zArenaMin, zArenaMax, zArenaRes = 3, 8, 0.5
@@ -112,7 +112,7 @@ def InWallApp(spacing):
             wlbt.GetRawImageSlice()
             PrintSensorTargets(targets, xLength, yLength)
             
-            xLength += float(spacing)
+            xLength += float(xspacing)
 
         elif response == "2":
             break
@@ -130,15 +130,14 @@ def InWallApp(spacing):
         elif response == "4":
             print("Please specify height you moving by on wall. Use a negative to indicate moving down.")
             yChange = input()
-            xLength = -xArenaMin
-            ylength += yChange
+            yLength += yChange
 
             wlbt.Trigger()
             targets = wlbt.GetImagingTargets()
             wlbt.GetRawImageSlice()
             PrintSensorTargets(targets, xLength, yLength)
 
-            xLength += float(spacing)
+            xspacing = -xspacing
 
 
         else:
@@ -150,6 +149,6 @@ def InWallApp(spacing):
     print('Terminated successfully')
 
 if __name__ == '__main__':
-    print("Please enter desired spacing: ")
-    spacing = input()
-    InWallApp(spacing)
+    print("Please enter desired xspacing: ")
+    xspacing = input()
+    InWallApp(xspacing)
