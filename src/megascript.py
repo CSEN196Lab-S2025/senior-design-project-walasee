@@ -93,7 +93,7 @@ def InWallApp():
     yLength = 0
     print("Please enter desired spacing: ")
     xspacing = input()
-    float(xspacing)
+    xspacing = float(xspacing)
 
     wlbt.Initialize()
     wlbt.ConnectAny()
