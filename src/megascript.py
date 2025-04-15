@@ -120,7 +120,7 @@ def InWallApp():
         if response == "":
             if (first == False):
                 xLength += float(xspacing)
-                first = False
+            first = False
             wlbt.Trigger()
             targets = wlbt.GetImagingTargets()
             wlbt.GetRawImageSlice()
