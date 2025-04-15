@@ -94,6 +94,7 @@ def InWallApp():
     print("Please enter desired spacing: ")
     xspacing = input()
     xspacing = float(xspacing)
+    first = True
 
     wlbt.Initialize()
     wlbt.ConnectAny()
@@ -117,12 +118,14 @@ def InWallApp():
         response = input()
 
         if response == "":
+            if (first == False):
+                xLength += float(xspacing)
+                first = False
             wlbt.Trigger()
             targets = wlbt.GetImagingTargets()
             wlbt.GetRawImageSlice()
             PrintSensorTargets(targets, xLength, yLength)
-            xLength += float(xspacing)
-
+            
         elif response == "2":
             break
 
