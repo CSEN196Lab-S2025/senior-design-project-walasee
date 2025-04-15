@@ -85,12 +85,15 @@ def PrintSensorTargets(targets, xL, yL):
             print(line)
             f.write(line + '\n')
 
-def InWallApp(xspacing):
+def InWallApp():
     xArenaMin, xArenaMax, xArenaRes = -3, 4, 0.5
     yArenaMin, yArenaMax, yArenaRes = -6, 4, 0.5
     zArenaMin, zArenaMax, zArenaRes = 3, 8, 0.5
     xLength = -xArenaMin
     yLength = 0
+    print("Please enter desired spacing: ")
+    xspacing = input()
+    float(xspacing)
 
     wlbt.Initialize()
     wlbt.ConnectAny()
@@ -150,6 +153,4 @@ def InWallApp(xspacing):
     print('Terminated successfully')
 
 if __name__ == '__main__':
-    print("Please enter desired spacing: ")
-    xspacing = input()
-    InWallApp(float(xspacing))
+    InWallApp()
