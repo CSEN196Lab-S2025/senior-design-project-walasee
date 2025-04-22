@@ -77,52 +77,21 @@ def create_ifc(points, simplices, output_ifc):
     model.write(output_ifc)
 
 # Plot Delaunay Mesh
-def plot2D(save_path="delaunay_2d_plot.png", tri):
+def plot2D(save_path="delaunay_2d_plot.png"):
+    points = np.loadtxt("wall_points.csv", delimiter=',')
+    points_2d = points[:, :2]
+    tri = Delaunay(points_2d)
 
-    # === Filter triangles by maximum edge length ===
-    max_edge_length = 10# Change this to your desired threshold (meters, cm, etc.)
-
-    valid_triangles = []
-    for simplex in tri.simplices:
-        verts = points_2d[simplex]
-        d01 = np.linalg.norm(verts[0] - verts[1])
-        d12 = np.linalg.norm(verts[1] - verts[2])
-        d20 = np.linalg.norm(verts[2] - verts[0])
-
-        if d01 <= max_edge_length and d12 <= max_edge_length and d20 <= max_edge_length:
-            valid_triangles.append(simplex)
-
-    valid_triangles = np.array(valid_triangles)
-
-    # === Plotting the filtered triangulation ===
     plt.figure(figsize=(8, 8))
-    plt.triplot(points_2d[:, 0], points_2d[:, 1], valid_triangles, color='blue')
-    plt.plot(points_2d[:, 0], points_2d[:, 1], 'ro', markersize=2)
-    plt.title(f"Filtered Delaunay Mesh (max edge ≤ {max_edge_length})")
+    plt.triplot(points_2d[:, 0], points_2d[:, 1], tri.simplices, color='blue')
+    plt.plot(points_2d[:, 0], points_2d[:, 1], 'ro')
+    plt.title("2D Delaunay Mesh")
     plt.xlabel("X")
     plt.ylabel("Y")
     plt.axis("equal")
-    plt.tight_layout()
-    plt.savefig("filtered_delaunay_plot.png", dpi=300)
-    plt.show()
-
-    print("✅ Filtered plot saved as: filtered_delaunay_plot.png")
-
-    
-    # points = np.loadtxt("wall_points.csv", delimiter=',')
-    # points_2d = points[:, :2]
-    # tri = Delaunay(points_2d)
-
-    # plt.figure(figsize=(8, 8))
-    # plt.triplot(points_2d[:, 0], points_2d[:, 1], tri.simplices, color='blue')
-    # plt.plot(points_2d[:, 0], points_2d[:, 1], 'ro')
-    # plt.title("2D Delaunay Mesh")
-    # plt.xlabel("X")
-    # plt.ylabel("Y")
-    # plt.axis("equal")
-    # plt.savefig(save_path, dpi=300)
-    # plt.close()
-    # print(f"✅ 2D Delaunay plot saved as: {save_path}")
+    plt.savefig(save_path, dpi=300)
+    plt.close()
+    print(f"✅ 2D Delaunay plot saved as: {save_path}")
 
 def plot3D():
     # Load the mesh from your saved file
@@ -141,14 +110,15 @@ if __name__ == "__main__":
     tri = delaunay_mesh_2d(points)  # 2D triangulation for flat wall data
     save_as_ply(points, tri.simplices, output_ply)
     create_ifc(points, tri.simplices, output_ifc)
-    print("✅ Mesh exported to:", output_ply)
-    print("✅ IFC file saved as:", output_ifc)
 
-
-    max_allowed_edge = 9  # Set your own physical distance threshold (meters? cm?)
+    max_allowed_edge = 0.5  # Set your own physical distance threshold (meters? cm?)
     filtered_simplices = delaunay_with_distance_limit(points, max_allowed_edge)
-    plot2D(filtered_simplices)
 
     print(f"✅ Triangles after filtering: {len(filtered_simplices)}")
 
+
+    print("✅ Mesh exported to:", output_ply)
+    print("✅ IFC file saved as:", output_ifc)
+
+    plot2D()
     # plot3D()
