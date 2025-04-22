@@ -74,7 +74,7 @@ def PrintSensorTargets(targets, xL, yL):
         if targets:
             for target in targets:
                 xVal = xL + target.xPosCm
-                yVal = yL + target.yPosCm
+                yVal = yL - target.yPosCm
                 line = f"x: {xVal} cm, y: {yVal} cm, z: {target.zPosCm} cm, a: {target.amplitude} cm"
                 print(line)
                 f.write(line + '\n')
