@@ -1,4 +1,4 @@
-ITERATION 3
+ITERATION 3 (Current version in progress)
 - After testing the scanning and plotting feature implemented in iteration 2, we realized that the plotting algorithm needs to change. Location data is received relative to the Walabot's origin only. If we want to plot the data to resemble the actual in wall objects, we have to hard code the recieved data to be plotted relative an origin that we set. 
 
 - megascripty.py: Scanning and plotting programs are combined into one megascript so that there is no need for a bash script or manual execution. The megascript.py program gives the user options to run certain functionalities via keyboard input (scan, increment arena in the x or y direction, plot, kill program).
