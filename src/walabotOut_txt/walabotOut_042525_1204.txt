@@ -1,0 +1,37 @@
+No Target Detected at x: 3 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 4.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 6.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 8.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 9.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 10.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 11.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 12.0 cm, y: 0 cm, z: 0.0 cm
+x: 13.7 cm, y: 0.0 cm, z: 8.0 cm, a: 74.8712913636414 cm
+x: 13.3 cm, y: 8.572527594031473e-17 cm, z: 8.0 cm, a: 75.91082585575333 cm
+No Target Detected at x: 15.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 16.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 18.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 20.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 20.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 18.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 16.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 14.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 13.0 cm, y: -4.0 cm, z: 0.0 cm
+x: 11.3 cm, y: -4.0 cm, z: 8.0 cm, a: 75.16793564336066 cm
+x: 11.7 cm, y: -4.0 cm, z: 8.0 cm, a: 74.4866407520835 cm
+No Target Detected at x: 10.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 9.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 8.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 6.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 4.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 3.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 2.0 cm, y: -4.0 cm, z: 0.0 cm

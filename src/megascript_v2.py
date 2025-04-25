@@ -136,6 +136,7 @@ def InWallApp():
             print("Specify height you are moving by on wall. Use negative to indicate moving down")
             yChange = input()
             yLength += float(yChange)
+            xLength = -xArenaMin
             wlbt.Trigger()
             targets = wlbt.GetImagingTargets()
             wlbt.GetRawImageSlice()
@@ -146,6 +147,7 @@ def InWallApp():
             os.makedirs(outputs_dir, exist_ok=True)
             plot_data_matplotlib(x, y, is_hit, f"{outputs_dir}/{timestamp_for_file}.png")
             plot_data_plotly(x, y, z, is_hit, f"{outputs_dir}/{timestamp_for_file}.html")
+            
 
         elif response == "3":
             break
