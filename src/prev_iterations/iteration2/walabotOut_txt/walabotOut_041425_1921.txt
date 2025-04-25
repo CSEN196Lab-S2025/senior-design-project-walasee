@@ -1,3 +1,0 @@
-No Target Detected at x: 3 cm, y: 0.0 cm, z: 0.0 cm
-No Target Detected at x: 7.0 cm, y: 0.0 cm, z: 0.0 cm
-x: 9.6 cm, y: -1.7145055188062946e-16 cm, z: 8.0 cm, a: 78.03042174061073 cm
