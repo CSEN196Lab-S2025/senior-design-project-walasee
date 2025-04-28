@@ -1,5 +1,5 @@
-# taken from ifcopenshell website: https://academy.ifcopenshell.org/posts/creating-a-simple-wall-with-property-set-and-quantity-information/
-
+'''taken from ifcopenshell website: https://academy.ifcopenshell.org/posts/creating-a-simple-wall-with-property-set-and-quantity-information/
+'''
 import uuid
 import time
 import tempfile
