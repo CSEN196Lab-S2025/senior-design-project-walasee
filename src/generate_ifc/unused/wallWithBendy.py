@@ -1,27 +1,27 @@
-THIS IS THE VERSION OF THE PROGRAM CORRELATING TO "figuringOutDirections.png"
-
 import ifcopenshell
 import os
 from datetime import datetime
+import math
 
-# -------- Input Wall and Pipe Parameters
-length_cm = 500  # Wall length in cm
-height_cm = 300  # Wall height in cm
-thickness_cm = 20  # Wall thickness in cm
+# -------- Read wall and pipe data from text file
+wall_dims = None
+pipe_segments = []
 
-pipe_radius_cm = 5   # Pipe radius in cm
-custom_pipe_positions = [
-    (50, 25, 50),  # (x, y, z) in centimeters
-    (150, 25, 100),
-    (300, 25, 150)
-]
+with open("coordinates.txt", "r") as f:
+    for line in f:
+        line = line.strip()
+        if line.startswith("WALL"):
+            _, l, h, w = line.replace("(", "").replace(")", "").split(",")
+            wall_dims = (float(l)/100, float(h)/100, float(w)/100)  # convert to meters
+        elif line.startswith("PIPE"):
+            parts = line.replace("PIPE,", "").strip().split(',')
+            coords = list(map(float, parts))
+            start = [coords[0]/100, coords[1]/100, coords[2]/100]
+            end = [coords[3]/100, coords[4]/100, coords[5]/100]
+            pipe_segments.append((start, end))
 
-# -------- Convert to meters
-length = length_cm / 100.0
-height = height_cm / 100.0
-thickness = thickness_cm / 100.0
-pipe_radius = pipe_radius_cm / 100.0
-custom_pipe_positions = [(x/100.0, y/100.0, z/100.0) for x, y, z in custom_pipe_positions]
+length, height, thickness = wall_dims
+pipe_radius = 0.05  # 5 cm radius
 
 # -------- Create IFC Model
 model = ifcopenshell.file(schema="IFC4")
@@ -110,12 +110,10 @@ wall.Representation = model.create_entity(
     Representations=[wall_shape]
 )
 
-# -------- Pipes at Custom Positions
+# -------- Pipe Segments from coordinates
 pipe_counter = 0
-
-for (x, y, z) in custom_pipe_positions:
+for start, end in pipe_segments:
     pipe = model.create_entity("IfcPipeSegment", GlobalId=f"PIPEGUID{pipe_counter:04d}", Name=f"Pipe{pipe_counter}")
-
     model.create_entity(
         "IfcRelContainedInSpatialStructure",
         GlobalId=f"relPipe{pipe_counter:04d}",
@@ -123,23 +121,27 @@ for (x, y, z) in custom_pipe_positions:
         RelatedElements=[pipe]
     )
 
+    # Direction and length
+    dir_vec = [e - s for s, e in zip(start, end)]
+    length = math.sqrt(sum(d ** 2 for d in dir_vec))
+    if length == 0:
+        continue
+    direction = [d / length for d in dir_vec]
+
+    # Placement at start point
     pipe.ObjectPlacement = model.create_entity(
         "IfcLocalPlacement",
         PlacementRelTo=None,
         RelativePlacement=model.create_entity(
             "IfcAxis2Placement3D",
-            Location=model.create_entity("IfcCartesianPoint", Coordinates=[x, y, z]),
-            Axis=model.create_entity("IfcDirection", DirectionRatios=[0.0, 0.0, 1.0]),
+            Location=model.create_entity("IfcCartesianPoint", Coordinates=start),
+            Axis=model.create_entity("IfcDirection", DirectionRatios=direction),
             RefDirection=model.create_entity("IfcDirection", DirectionRatios=[1.0, 0.0, 0.0])
         )
     )
 
-    pipe_profile = model.create_entity(
-        "IfcCircleProfileDef",
-        ProfileType="AREA",
-        Radius=pipe_radius
-    )
-
+    # Geometry
+    pipe_profile = model.create_entity("IfcCircleProfileDef", ProfileType="AREA", Radius=pipe_radius)
     pipe_solid = model.create_entity(
         "IfcExtrudedAreaSolid",
         SweptArea=pipe_profile,
@@ -150,7 +152,7 @@ for (x, y, z) in custom_pipe_positions:
             RefDirection=model.create_entity("IfcDirection", DirectionRatios=[1.0, 0.0, 0.0])
         ),
         ExtrudedDirection=model.create_entity("IfcDirection", DirectionRatios=[0.0, 0.0, 1.0]),
-        Depth=height - z
+        Depth=length
     )
 
     pipe_shape = model.create_entity(
@@ -172,7 +174,7 @@ for (x, y, z) in custom_pipe_positions:
 output_dir = "ifc_outputs"
 os.makedirs(output_dir, exist_ok=True)
 timestamp_for_file = datetime.now().strftime("%m%d%y_%H%M")
-output_file = os.path.join(output_dir, f"wall_with_pipes_{timestamp_for_file}.ifc")
+output_file = os.path.join(output_dir, f"wall_with_pipe_segments_{timestamp_for_file}.ifc")
 model.write(output_file)
 
 print(f"IFC file created and saved as: {output_file}")
