@@ -24,6 +24,7 @@ output_dir = 'walabotOut_txt'
 makedirs(output_dir, exist_ok=True)
 output_filename = join(output_dir, f'walabotOut_{timestamp_for_file}.txt')
 clean_filename = join(output_dir, f'walaboutClean_{timestamp_for_file}.txt')
+pass_file = join('pipe_plotting', 'pass3_final.txt')
 
 def read_data(filename):
     x, y, z, is_hit = [], [], [], []
@@ -155,16 +156,33 @@ def InWallApp():
         elif response == "3":
             x, y, z, is_hit = read_data(output_filename)
             low_y = min(y)
-            with open(clean_filename) as f:
+            if low_y < 0:
                 for i in y:
                     y[i] += low_y
+        
+            with open(clean_filename) as f:
+                for i in y:   
                     if is_hit[i]:
                         line = f"{x[i]}, {y[i]}, {z[i]}"
-                        print(line)
                         f.write(line + '\n')
 
             proc.run_all(clean_filename)
+            points = proc.read_input(pass_file)
 
+            wall = (max(x), max(y), max(z) - 2)
+            
+            with open("pipes.txt") as f:
+                line = f'WALL {wall[0]}, {wall[1]}, {wall[2]},'
+                f.write(line + '\n')
+                for p in range(len(points) - 1):
+                    x = points[p][0]
+                    y = points[p][1]
+                    z = points[p][2]
+                    x1 = points[p + 1][0]
+                    y1 = points[p + 1][1]
+                    z1 = points[p + 1][2]
+                    line = f'PIPE {x}, {y}, {z}, {x1}, {y1}, {z1}'
+                    f.write(line +'\n')
 
         elif response == "4":
             break
