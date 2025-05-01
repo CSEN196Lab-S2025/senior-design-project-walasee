@@ -9,6 +9,8 @@ import plotly.graph_objects as go
 import numpy as np
 import os
 
+import pipe_plotting.multiple_pipes
+
 if platform == 'win32':
     modulePath = join('C:/', 'Program Files', 'Walabot', 'WalabotSDK', 'python', 'WalabotAPI.py')
 elif platform.startswith('linux'):
@@ -114,7 +116,7 @@ def InWallApp():
             wlbt.Trigger()
 
     while True:
-        print("Press Enter to record wall image\n2: start a new y line\n3: end program")
+        print("Press Enter to record wall image\n2: start a new y line\n3: generate ifc\n4: end program")
         response = input()
 
         if response == "":
@@ -150,6 +152,15 @@ def InWallApp():
             
 
         elif response == "3":
+            x, y, z, is_hit = read_data(output_filename)
+            low_y = min(y)
+            for i in y:
+                y[i] += low_y
+            
+
+
+
+        elif response == "4":
             break
 
         else:
