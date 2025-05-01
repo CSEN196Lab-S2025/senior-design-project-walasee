@@ -149,5 +149,9 @@ def run_all_pipeline():
     run_pass2(input_file)
     run_pass3("pass2_simplified.txt")
 
+def run_all(input_file):
+    run_pass2(input_file)
+    run_pass3("pass2_simplified.txt")
+
 if __name__ == "__main__":
     run_all_pipeline()

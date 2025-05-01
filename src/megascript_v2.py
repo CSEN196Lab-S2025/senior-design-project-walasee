@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 import numpy as np
 import os
 
-import pipe_plotting.multiple_pipes
+import pipe_plotting.process_points as proc
 
 if platform == 'win32':
     modulePath = join('C:/', 'Program Files', 'Walabot', 'WalabotSDK', 'python', 'WalabotAPI.py')
@@ -23,6 +23,7 @@ timestamp_for_file = datetime.now().strftime("%m%d%y_%H%M")
 output_dir = 'walabotOut_txt'
 makedirs(output_dir, exist_ok=True)
 output_filename = join(output_dir, f'walabotOut_{timestamp_for_file}.txt')
+clean_filename = join(output_dir, f'walaboutClean_{timestamp_for_file}.txt')
 
 def read_data(filename):
     x, y, z, is_hit = [], [], [], []
@@ -154,10 +155,15 @@ def InWallApp():
         elif response == "3":
             x, y, z, is_hit = read_data(output_filename)
             low_y = min(y)
-            for i in y:
-                y[i] += low_y
-            
+            with open(clean_filename) as f:
+                for i in y:
+                    y[i] += low_y
+                    if is_hit[i]:
+                        line = f"{x[i]}, {y[i]}, {z[i]}"
+                        print(line)
+                        f.write(line + '\n')
 
+            proc.run_all(clean_filename)
 
 
         elif response == "4":
