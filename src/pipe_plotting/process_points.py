@@ -60,7 +60,7 @@ def run_pass2(filename):
 
     keypoints = np.array(keypoints)
 
-    np.savetxt("pass2_simplified.txt", keypoints, fmt="%.4f, %.4f")
+    np.savetxt("pipe_plotting/pass2_simplified.txt", keypoints, fmt="%.4f, %.4f")
 
     plt.figure(figsize=(10,8))
     plt.scatter(points[:,0], points[:,1], color='red')
@@ -72,7 +72,7 @@ def run_pass2(filename):
     plt.grid(True)
     plt.axis('equal')
     plt.tight_layout()
-    plt.savefig("pass2_simplified.png")
+    plt.savefig("pipe_plotting/pass2_simplified.png")
     plt.close()
 
     fig = go.Figure()
@@ -80,7 +80,7 @@ def run_pass2(filename):
     for seg in segments:
         fig.add_trace(go.Scatter3d(x=seg[:,0], y=seg[:,1], z=np.full(seg.shape[0],8), mode='lines'))
     fig.update_layout(title="Pass 2: Smart Clustered Segments 3D", scene=dict(xaxis_title='X', yaxis_title='Y', zaxis_title='Z'))
-    fig.write_html("pass2_simplified.html")
+    fig.write_html("pipe_plotting/pass2_simplified.html")
 
 # ------------ Final Clean Snap with Real Bend Detection and 90 Degree Correction ------------
 
@@ -121,7 +121,7 @@ def run_pass3(filename):
 
     snapped_path = np.array(snapped_path)
 
-    np.savetxt("pass3_final.txt", snapped_path, fmt="%.4f, %.4f, %.4f")
+    np.savetxt("pipe_plotting/pass3_final.txt", snapped_path, fmt="%.4f, %.4f, %.4f")
 
     plt.figure(figsize=(10,8))
     plt.plot(snapped_path[:,0], snapped_path[:,1], color='green', marker='o')
@@ -131,13 +131,13 @@ def run_pass3(filename):
     plt.grid(True)
     plt.axis('equal')
     plt.tight_layout()
-    plt.savefig("pass3_final.png")
+    plt.savefig("pipe_plotting/pass3_final.png")
     plt.close()
 
     fig = go.Figure()
     fig.add_trace(go.Scatter3d(x=snapped_path[:,0], y=snapped_path[:,1], z=snapped_path[:,2], mode='lines+markers'))
     fig.update_layout(title="Pass 3: Final 3D Pipe", scene=dict(xaxis_title='X', yaxis_title='Y', zaxis_title='Z'))
-    fig.write_html("pass3_final.html")
+    fig.write_html("pipe_plotting/pass3_final.html")
 
 # ------------ Runner ------------
 
@@ -147,11 +147,11 @@ def run_all_pipeline():
         sys.exit(1)
     input_file = sys.argv[1]
     run_pass2(input_file)
-    run_pass3("pass2_simplified.txt")
+    run_pass3("pipe_plotting/pass2_simplified.txt")
 
 def run_all(input_file):
     run_pass2(input_file)
-    run_pass3("pass2_simplified.txt")
+    run_pass3("pipe_plotting/pass2_simplified.txt")
 
 if __name__ == "__main__":
     run_all_pipeline()

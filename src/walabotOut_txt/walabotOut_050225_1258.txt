@@ -1,0 +1,380 @@
+No Target Detected at x: 3 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 9.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 11.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 13.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: 0 cm, z: 0.0 cm
+x: 33.0 cm, y: 0.0 cm, z: 8.0 cm, a: 78.53760705169026 cm
+No Target Detected at x: 35.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: 0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 9.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 11.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 13.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -2.0 cm, z: 0.0 cm
+x: 33.0 cm, y: -2.0 cm, z: 8.0 cm, a: 78.00815144662181 cm
+No Target Detected at x: 35.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -2.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 9.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 11.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 13.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -4.0 cm, z: 0.0 cm
+x: 32.3 cm, y: -4.0 cm, z: 8.0 cm, a: 75.69716661757742 cm
+No Target Detected at x: 35.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -4.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 9.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 11.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 13.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -6.0 cm, z: 0.0 cm
+x: 32.3 cm, y: -6.0 cm, z: 8.0 cm, a: 74.28582033621127 cm
+No Target Detected at x: 35.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -6.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 9.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 11.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 13.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -8.0 cm, z: 0.0 cm
+x: 32.31063457289145 cm, y: -7.878446275633149 cm, z: 8.0 cm, a: 72.80703927550891 cm
+No Target Detected at x: 35.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -8.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 9.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 11.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 13.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -10.0 cm, z: 0.0 cm
+x: 32.3 cm, y: -10.0 cm, z: 8.0 cm, a: 72.07860856004683 cm
+No Target Detected at x: 35.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -10.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 9.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 11.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 13.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -12.0 cm, z: 0.0 cm
+x: 32.4 cm, y: -12.0 cm, z: 8.0 cm, a: 68.01067339494553 cm
+x: 32.3 cm, y: -12.0 cm, z: 8.0 cm, a: 70.69483942999794 cm
+No Target Detected at x: 35.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -12.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 9.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 11.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 13.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -14.0 cm, z: 0.0 cm
+x: 32.3 cm, y: -14.0 cm, z: 8.0 cm, a: 69.09573661739438 cm
+No Target Detected at x: 35.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -14.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 9.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 11.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 13.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -16.0 cm, z: 0.0 cm
+x: 32.3 cm, y: -16.0 cm, z: 8.0 cm, a: 67.74106171808769 cm
+No Target Detected at x: 35.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -16.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -18.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -18.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -18.0 cm, z: 0.0 cm
+No Target Detected at x: 9.0 cm, y: -18.0 cm, z: 0.0 cm
+No Target Detected at x: 11.0 cm, y: -18.0 cm, z: 0.0 cm
+x: 12.149123929432042 cm, y: -22.82555798975982 cm, z: 8.0 cm, a: 24.185734673519878 cm
+x: 14.149123929432042 cm, y: -22.82555798975982 cm, z: 8.0 cm, a: 25.190592967752004 cm
+x: 16.14912392943204 cm, y: -22.82555798975982 cm, z: 8.0 cm, a: 23.82297631796513 cm
+x: 18.14912392943204 cm, y: -22.82555798975982 cm, z: 8.0 cm, a: 23.32177142221701 cm
+x: 20.14912392943204 cm, y: -22.82555798975982 cm, z: 8.0 cm, a: 22.67078336987443 cm
+x: 22.14912392943204 cm, y: -22.82555798975982 cm, z: 8.0 cm, a: 21.604074834191735 cm
+No Target Detected at x: 25.0 cm, y: -18.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -18.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -18.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -18.0 cm, z: 0.0 cm
+x: 32.3 cm, y: -18.0 cm, z: 8.0 cm, a: 67.05251906451574 cm
+No Target Detected at x: 35.0 cm, y: -18.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -18.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -18.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -20.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -20.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -20.0 cm, z: 0.0 cm
+x: 10.675898702295774 cm, y: -24.604493841850953 cm, z: 8.0 cm, a: 34.45802808853297 cm
+x: 11.0 cm, y: -24.2 cm, z: 8.0 cm, a: 37.323650354566375 cm
+x: 12.270677653798893 cm, y: -24.136192562651274 cm, z: 8.0 cm, a: 45.307776884724476 cm
+x: 14.270677653798893 cm, y: -24.136192562651274 cm, z: 8.0 cm, a: 47.3311279932403 cm
+x: 16.27067765379889 cm, y: -24.136192562651274 cm, z: 8.0 cm, a: 46.04306911442611 cm
+x: 18.27067765379889 cm, y: -24.136192562651274 cm, z: 8.0 cm, a: 44.315013249328686 cm
+x: 20.14912392943204 cm, y: -24.82555798975982 cm, z: 8.0 cm, a: 40.627821044440125 cm
+x: 22.27067765379889 cm, y: -24.136192562651274 cm, z: 8.0 cm, a: 40.441985392950734 cm
+x: 24.14912392943204 cm, y: -24.82555798975982 cm, z: 8.0 cm, a: 39.17868848100284 cm
+x: 26.27067765379889 cm, y: -24.136192562651274 cm, z: 8.0 cm, a: 37.948048752487956 cm
+No Target Detected at x: 29.0 cm, y: -20.0 cm, z: 0.0 cm
+x: 32.37873085421709 cm, y: -20.243107448733703 cm, z: 8.0 cm, a: 61.46542136624549 cm
+x: 32.3 cm, y: -20.0 cm, z: 8.0 cm, a: 66.19855419024668 cm
+No Target Detected at x: 35.0 cm, y: -20.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -20.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -20.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -22.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -22.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -22.0 cm, z: 0.0 cm
+x: 10.05 cm, y: -23.818653347947322 cm, z: 8.0 cm, a: 50.455238876453706 cm
+x: 11.0 cm, y: -23.4 cm, z: 8.0 cm, a: 54.45971099029381 cm
+x: 12.756892551266297 cm, y: -23.378730854217093 cm, z: 8.0 cm, a: 57.47272882051144 cm
+x: 14.756892551266297 cm, y: -23.378730854217093 cm, z: 8.0 cm, a: 57.3327664769195 cm
+x: 16.756892551266297 cm, y: -23.378730854217093 cm, z: 8.0 cm, a: 55.263057889802056 cm
+x: 18.756892551266297 cm, y: -23.378730854217093 cm, z: 8.0 cm, a: 53.575185607076634 cm
+x: 20.756892551266297 cm, y: -23.378730854217093 cm, z: 8.0 cm, a: 49.032372711372446 cm
+x: 22.756892551266297 cm, y: -23.378730854217093 cm, z: 8.0 cm, a: 46.685718813007405 cm
+x: 24.756892551266297 cm, y: -23.378730854217093 cm, z: 8.0 cm, a: 43.65043754078306 cm
+x: 26.756892551266297 cm, y: -23.378730854217093 cm, z: 8.0 cm, a: 43.68203953928837 cm
+x: 29.0 cm, y: -23.4 cm, z: 8.0 cm, a: 48.67604011596223 cm
+x: 31.0 cm, y: -22.0 cm, z: 8.0 cm, a: 59.70041606748197 cm
+x: 31.621269145782907 cm, y: -21.756892551266297 cm, z: 8.0 cm, a: 61.14875448687514 cm
+No Target Detected at x: 35.0 cm, y: -22.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -22.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -22.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -24.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -24.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -24.0 cm, z: 0.0 cm
+x: 10.07246222036657 cm, y: -24.899902653561156 cm, z: 8.0 cm, a: 67.13201525627225 cm
+x: 10.878446275633149 cm, y: -23.310634572891455 cm, z: 8.0 cm, a: 70.24554634189532 cm
+x: 13.0 cm, y: -23.3 cm, z: 8.0 cm, a: 63.916162428244895 cm
+x: 15.121553724366851 cm, y: -23.310634572891455 cm, z: 8.0 cm, a: 60.643234426189444 cm
+x: 17.12155372436685 cm, y: -23.310634572891455 cm, z: 8.0 cm, a: 59.26076036657587 cm
+x: 19.12155372436685 cm, y: -23.310634572891455 cm, z: 8.0 cm, a: 57.18602305452233 cm
+x: 21.12155372436685 cm, y: -23.310634572891455 cm, z: 8.0 cm, a: 53.47547229504297 cm
+x: 23.12155372436685 cm, y: -23.310634572891455 cm, z: 8.0 cm, a: 50.86830444284778 cm
+x: 25.0 cm, y: -22.6 cm, z: 8.0 cm, a: 48.31839974403804 cm
+x: 27.12155372436685 cm, y: -23.310634572891455 cm, z: 8.0 cm, a: 47.58542030794875 cm
+x: 29.0 cm, y: -22.6 cm, z: 8.0 cm, a: 51.02823347517202 cm
+x: 30.521171799344064 cm, y: -22.68443033089973 cm, z: 8.0 cm, a: 56.20685938391601 cm
+x: 31.02664549634959 cm, y: -23.281757699016094 cm, z: 8.0 cm, a: 54.48225336304984 cm
+No Target Detected at x: 35.0 cm, y: -24.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -24.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -24.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -26.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -26.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -26.0 cm, z: 0.0 cm
+x: 10.4 cm, y: -26.0 cm, z: 8.0 cm, a: 80.9755859856293 cm
+x: 9.181346652052678 cm, y: -24.95 cm, z: 8.0 cm, a: 90.52788734947131 cm
+No Target Detected at x: 13.0 cm, y: -26.0 cm, z: 0.0 cm
+x: 13.563515398032191 cm, y: -22.053290992699186 cm, z: 8.0 cm, a: 68.01267832853678 cm
+x: 16.27067765379889 cm, y: -21.863807437348726 cm, z: 8.0 cm, a: 62.36481461930137 cm
+x: 18.27067765379889 cm, y: -21.863807437348726 cm, z: 8.0 cm, a: 57.90836124809315 cm
+x: 20.27067765379889 cm, y: -21.863807437348726 cm, z: 8.0 cm, a: 54.888156852459936 cm
+x: 22.27067765379889 cm, y: -21.863807437348726 cm, z: 8.0 cm, a: 51.28290494562542 cm
+x: 24.27067765379889 cm, y: -21.863807437348726 cm, z: 8.0 cm, a: 49.42577245444442 cm
+x: 26.392231378165743 cm, y: -22.55317286445727 cm, z: 8.0 cm, a: 45.50184461091392 cm
+x: 28.27067765379889 cm, y: -21.863807437348726 cm, z: 8.0 cm, a: 42.33701130367298 cm
+No Target Detected at x: 31.0 cm, y: -26.0 cm, z: 0.0 cm
+No Target Detected at x: 33.0 cm, y: -26.0 cm, z: 0.0 cm
+No Target Detected at x: 35.0 cm, y: -26.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -26.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -26.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -28.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -28.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -28.0 cm, z: 0.0 cm
+x: 10.37873085421709 cm, y: -27.756892551266297 cm, z: 8.0 cm, a: 88.80335023323015 cm
+x: 9.026645496349593 cm, y: -27.281757699016094 cm, z: 8.0 cm, a: 90.62820847882509 cm
+No Target Detected at x: 13.0 cm, y: -28.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -28.0 cm, z: 0.0 cm
+x: 16.14912392943204 cm, y: -23.17444201024018 cm, z: 8.0 cm, a: 32.124874626601915 cm
+x: 17.324101297704225 cm, y: -23.395506158149047 cm, z: 8.0 cm, a: 29.904441592749148 cm
+x: 20.14912392943204 cm, y: -23.17444201024018 cm, z: 8.0 cm, a: 31.303662146023036 cm
+x: 21.324101297704225 cm, y: -23.395506158149047 cm, z: 8.0 cm, a: 33.255240677624265 cm
+x: 24.14912392943204 cm, y: -23.17444201024018 cm, z: 8.0 cm, a: 33.40561518162453 cm
+x: 26.14912392943204 cm, y: -23.17444201024018 cm, z: 8.0 cm, a: 33.35338372271606 cm
+x: 27.324101297704225 cm, y: -23.395506158149047 cm, z: 8.0 cm, a: 29.740930352406316 cm
+No Target Detected at x: 31.0 cm, y: -28.0 cm, z: 0.0 cm
+No Target Detected at x: 33.0 cm, y: -28.0 cm, z: 0.0 cm
+No Target Detected at x: 35.0 cm, y: -28.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -28.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -28.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -30.0 cm, z: 0.0 cm
+x: 10.37873085421709 cm, y: -29.756892551266297 cm, z: 8.0 cm, a: 87.85969604772716 cm
+x: 9.6 cm, y: -30.0 cm, z: 8.0 cm, a: 85.31539429470048 cm
+No Target Detected at x: 13.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 33.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 35.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -30.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -32.0 cm, z: 0.0 cm
+x: 9.689365427108546 cm, y: -32.12155372436685 cm, z: 8.0 cm, a: 83.93622888095355 cm
+No Target Detected at x: 11.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 13.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 33.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 35.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -32.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -34.0 cm, z: 0.0 cm
+x: 9.657784834550135 cm, y: -34.23941410032797 cm, z: 8.0 cm, a: 85.44042867426397 cm
+x: 9.62126914578291 cm, y: -34.2431074487337 cm, z: 8.0 cm, a: 80.81002557630707 cm
+No Target Detected at x: 13.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 33.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 35.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -34.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -36.0 cm, z: 0.0 cm
+x: 9.7 cm, y: -36.0 cm, z: 8.0 cm, a: 89.90748116164397 cm
+x: 9.62126914578291 cm, y: -36.2431074487337 cm, z: 8.0 cm, a: 81.62713167092373 cm
+No Target Detected at x: 13.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 33.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 35.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -36.0 cm, z: 0.0 cm
+No Target Detected at x: 3 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 5.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 7.0 cm, y: -38.0 cm, z: 0.0 cm
+x: 9.7 cm, y: -38.0 cm, z: 8.0 cm, a: 93.67575058894407 cm
+x: 9.62126914578291 cm, y: -38.2431074487337 cm, z: 8.0 cm, a: 84.33986622596044 cm
+No Target Detected at x: 13.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 15.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 17.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 19.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 21.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 23.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 25.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 27.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 29.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 31.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 33.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 35.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 37.0 cm, y: -38.0 cm, z: 0.0 cm
+No Target Detected at x: 39.0 cm, y: -38.0 cm, z: 0.0 cm
