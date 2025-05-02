@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import numpy as np
 import os
+import subprocess
 
 import pipe_plotting.process_points as proc
 import generate_ifc.generate_ifc as ifc
@@ -23,9 +24,9 @@ wlbt.Init()
 timestamp_for_file = datetime.now().strftime("%m%d%y_%H%M")
 output_dir = 'walabotOut_txt'
 makedirs(output_dir, exist_ok=True)
-output_filename = join(output_dir, f'walabotOut_{timestamp_for_file}.txt')
-clean_filename = join(output_dir, f'walaboutClean_{timestamp_for_file}.txt')
-ifcCoords_filename = join('generate_ifc', f'coordsForifc_{timestamp_for_file}.txt')
+unprocessed_filename = join(output_dir, f'walabotOut_{timestamp_for_file}.txt')
+clean_filename = join(output_dir, f'walabotClean_{timestamp_for_file}.txt')
+ifcCoords_filename = join('generate_ifc/coordinates', f'coordsForifc_{timestamp_for_file}.txt')
 pass_file = join('pipe_plotting', 'pass3_final.txt')
 
 def read_data(filename):
@@ -76,7 +77,7 @@ def plot_data_matplotlib(x, y, is_hit, save_path):
     print(f"2D plot saved as: {save_path}")
 
 def PrintSensorTargets(targets, xL, yL):
-    with open(output_filename, 'a') as f:
+    with open(unprocessed_filename, 'a') as f:
         if targets:
             for target in targets:
                 xVal = xL + target.xPosCm
@@ -132,13 +133,14 @@ def InWallApp():
             wlbt.GetRawImageSlice()
             PrintSensorTargets(targets, xLength, yLength)
 
-            x, y, z, is_hit = read_data(output_filename)
-            outputs_dir = "outputs"
+            x, y, z, is_hit = read_data(unprocessed_filename)
+            outputs_dir = "walabotOut_plots"
             os.makedirs(outputs_dir, exist_ok=True)
             plot_data_matplotlib(x, y, is_hit, f"{outputs_dir}/{timestamp_for_file}.png")
             plot_data_plotly(x, y, z, is_hit, f"{outputs_dir}/{timestamp_for_file}.html")
 
         elif response == "2":
+            # Don't click enter until the Walabot is in proper position
             print("Specify height you are moving by on wall. Use negative to indicate moving down")
             yChange = input()
             yLength += float(yChange)
@@ -148,35 +150,64 @@ def InWallApp():
             wlbt.GetRawImageSlice()
             PrintSensorTargets(targets, xLength, yLength)
 
-            x, y, z, is_hit = read_data(output_filename)
-            outputs_dir = "outputs"
+            x, y, z, is_hit = read_data(unprocessed_filename)
+            outputs_dir = "walabotOut_plots"
             os.makedirs(outputs_dir, exist_ok=True)
             plot_data_matplotlib(x, y, is_hit, f"{outputs_dir}/{timestamp_for_file}.png")
             plot_data_plotly(x, y, z, is_hit, f"{outputs_dir}/{timestamp_for_file}.html")
             
 
         elif response == "3":
-            x, y, z, is_hit = read_data(output_filename)
+            # -------------- The action -> and the file that's outputted from that action
+            # 1) Clean data txt file, aka removes "No Target Detected" -> 'walabotOut_txt/walaboutClean_{time}.txt'
+            # 2) Run cleaned data through ML pipe_plotting/process_points.py -> 'pipe_plotting/pass3_final.txt'
+            # 3) Reformat 'pass3_final.txt' to use for IFC generation -> 'generate_ifc/coordinates/coordsForIfc_{time}.txt'
+            # 4) Run reformatted data through generate_ifc/generate_ifc.py -> 'generate_ifc/outputted_ifc/wall_with_pipes_{time}.txt'
 
+            # read uncleaned data
+            x, y, z, is_hit = read_data(unprocessed_filename)
 
-            #what does this do?
+            # before data is cleaned, grab the max xyz of all data collected (even when no target) to get wall dimensions
+            wall_dim = (max(x), max(y), max(z) - 6) #max(z) always 8, so subtract 6 to get 2cm thick wall
+
+            # transforms -y to +y and make so min(y) is always 0
             low_y = min(y)
             if low_y < 0:
                 for i in range(len(y)):
                     y[i] += low_y
-        
-            with open(clean_filename, 'a') as f:
-                for i in range(len(y)):
-                        line = f"{x[i]}, {y[i]}, {z[i]}"
-                        f.write(line + '\n')
 
-            proc.run_all(clean_filename)
+            # with open(clean_filename, 'a') as f:
+            #     for i in range(len(y)):
+            #         if is_hit[i]:
+            #             line = f"{x[i]}, {y[i]}, {z[i]}"
+            #             f.write(line + '\n')
+
+            # clean the unprocessed data by getting rid of No Target Detected x: y: z: and cm
+            with open(unprocessed_filename, "r") as infile, open(clean_filename, "w") as outfile:
+                for line in infile:
+                    # Skip lines containing "No Target Detected"
+                    if "No Target Detected" in line:
+                        continue                    
+                    # Remove "x:", "y:", "z:", and any extra spaces
+                    cleaned_line = (
+                        line.replace("x:", "")
+                            .replace("y:", "")
+                            .replace("z:", "")
+                            .replace("cm", "")  # Remove "cm" if present
+                            .strip()
+                    )            
+                    # Write the cleaned line to the output file
+                    outfile.write(cleaned_line + "\n")
+            
+            # Input cleaned data through ML algorithm
+            proc.run_all(clean_filename) #gives ML processed points as /pipe_plotting/pass3_final.txt
+
+            # Read start and end points of pipe segments in pass3_final.txt determined by ML algorithm 
             points = proc.read_input(pass_file)
 
-            wall = (max(x), max(y), max(z) - 2) #why minus 2?
-            
+            # Write wall_dim and pipe segment points in correct format 
             with open(ifcCoords_filename, 'a') as f:
-                line = f'WALL, {wall[0]}, {wall[1]}, {wall[2]}'
+                line = f'WALL, {wall_dim[0]}, {wall_dim[1]}, {wall_dim[2]}'
                 f.write(line + '\n')
                 for p in range(len(points) - 1):
                     x = points[p][0]
@@ -188,6 +219,7 @@ def InWallApp():
                     line = f'PIPE, {x}, {y}, {z}, {x1}, {y1}, {z1}'
                     f.write(line +'\n')
             
+            # Input reformatted data into ifc generation program
             ifc.generate(ifcCoords_filename)
 
         elif response == "4":
