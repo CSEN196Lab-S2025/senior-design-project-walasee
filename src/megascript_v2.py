@@ -25,6 +25,7 @@ output_dir = 'walabotOut_txt'
 makedirs(output_dir, exist_ok=True)
 output_filename = join(output_dir, f'walabotOut_{timestamp_for_file}.txt')
 clean_filename = join(output_dir, f'walaboutClean_{timestamp_for_file}.txt')
+ifcCoords_filename = join('generate_ifc', f'coordsForifc_{timestamp_for_file}.txt')
 pass_file = join('pipe_plotting', 'pass3_final.txt')
 
 def read_data(filename):
@@ -157,6 +158,7 @@ def InWallApp():
         elif response == "3":
             x, y, z, is_hit = read_data(output_filename)
 
+
             #what does this do?
             low_y = min(y)
             if low_y < 0:
@@ -173,8 +175,8 @@ def InWallApp():
 
             wall = (max(x), max(y), max(z) - 2) #why minus 2?
             
-            with open("coordsForIfc.txt", 'a') as f:
-                line = f'WALL, {wall[0]}, {wall[1]}, {wall[2]},'
+            with open(ifcCoords_filename, 'a') as f:
+                line = f'WALL, {wall[0]}, {wall[1]}, {wall[2]}'
                 f.write(line + '\n')
                 for p in range(len(points) - 1):
                     x = points[p][0]
@@ -186,7 +188,7 @@ def InWallApp():
                     line = f'PIPE, {x}, {y}, {z}, {x1}, {y1}, {z1}'
                     f.write(line +'\n')
             
-            ifc.generate("coordsForIfc.txt")
+            ifc.generate(ifcCoords_filename)
 
         elif response == "4":
             break
