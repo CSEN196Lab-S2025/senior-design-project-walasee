@@ -7,7 +7,7 @@ import math
 IMPORTANT: All inputted coordinates are blown up by 100 because the online ifc viewer could
 show anything if I put anything less than 1 meter. We shall see if Revit allows exact dimensions.
 
-WALL, 5000, 4000, 200 (WALL, length, width/thickness, height)
+WALL, 5000, 4000, 200 (WALL, length, heightm width/thickness)
 PIPE, 1200.1667, 3200.0000, 800.0000, 1200.1667, 1900.7923, 800.0000 (PIPE, x, y, z, x1, y2, z2)
 PIPE, 1200.1667, 1900.7923, 800.0000, 3700.6447, 1900.7923, 800.0000
 PIPE, 3700.6447, 1900.7923, 800.0000, 3700.6447, 900.0000, 800.0000
@@ -35,7 +35,7 @@ def generate(input_file):
     length = length_cm /100
     height = height_cm / 100
     thickness = thickness_cm / 100
-    pipe_radius_cm = 100 # 100 meters right now, online ifc viewer can't show smt that small
+    pipe_radius_cm = 1 # 100 meters right now, online ifc viewer can't show smt that small
     pipe_radius = pipe_radius_cm / 100
     custom_pipe_segments = [
         ((x1/100, z1/100, y1/100), (x2/100, z2/100, y2/100))
