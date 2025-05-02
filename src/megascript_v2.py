@@ -10,6 +10,7 @@ import numpy as np
 import os
 
 import pipe_plotting.process_points as proc
+import generate_ifc.generate_ifc as ifc
 
 if platform == 'win32':
     modulePath = join('C:/', 'Program Files', 'Walabot', 'WalabotSDK', 'python', 'WalabotAPI.py')
@@ -155,24 +156,25 @@ def InWallApp():
 
         elif response == "3":
             x, y, z, is_hit = read_data(output_filename)
+
+            #what does this do?
             low_y = min(y)
             if low_y < 0:
-                for i in y:
+                for i in range(len(y)):
                     y[i] += low_y
         
-            with open(clean_filename) as f:
-                for i in y:   
-                    if is_hit[i]:
+            with open(clean_filename, 'a') as f:
+                for i in range(len(y)):
                         line = f"{x[i]}, {y[i]}, {z[i]}"
                         f.write(line + '\n')
 
             proc.run_all(clean_filename)
             points = proc.read_input(pass_file)
 
-            wall = (max(x), max(y), max(z) - 2)
+            wall = (max(x), max(y), max(z) - 2) #why minus 2?
             
-            with open("pipes.txt") as f:
-                line = f'WALL {wall[0]}, {wall[1]}, {wall[2]},'
+            with open("coordsForIfc.txt", 'a') as f:
+                line = f'WALL, {wall[0]}, {wall[1]}, {wall[2]},'
                 f.write(line + '\n')
                 for p in range(len(points) - 1):
                     x = points[p][0]
@@ -181,8 +183,10 @@ def InWallApp():
                     x1 = points[p + 1][0]
                     y1 = points[p + 1][1]
                     z1 = points[p + 1][2]
-                    line = f'PIPE {x}, {y}, {z}, {x1}, {y1}, {z1}'
+                    line = f'PIPE, {x}, {y}, {z}, {x1}, {y1}, {z1}'
                     f.write(line +'\n')
+            
+            ifc.generate("coordsForIfc.txt")
 
         elif response == "4":
             break
