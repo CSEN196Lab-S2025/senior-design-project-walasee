@@ -26,7 +26,9 @@ output_dir = 'walabotOut_txt'
 makedirs(output_dir, exist_ok=True)
 unprocessed_filename = join(output_dir, f'walabotOut_{timestamp_for_file}.txt')
 clean_filename = join(output_dir, f'walabotClean_{timestamp_for_file}.txt')
-ifcCoords_filename = join('generate_ifc/coordinates', f'coordsForifc_{timestamp_for_file}.txt')
+x = 1
+
+ifcrds_filename = join('generate_ifc/coordinates', f'coordsForifc_{timestamp_for_file}.txt')
 pass_file = join('pipe_plotting', 'pass3_final.txt')
 
 def read_data(filename):
