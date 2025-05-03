@@ -1,157 +1,180 @@
 import numpy as np
-import sys
 import matplotlib.pyplot as plt
-import plotly.graph_objects as go
-from sklearn.cluster import DBSCAN
+import sys
 
-# ------------ Read Input Directly ------------
+# ---- CONFIGURATION ----
+X_TOLERANCE = 4.0  # maximum X distance between points to be in same vertical cluster (cm)
+Y_TOLERANCE = 4.0  # maximum Y distance between points to be in same horizontal cluster (cm)
+MIN_SEGMENT_LENGTH = 5.0  # minimum length of a segment to be valid (cm)
 
-def read_input(filename):
+# ---- COMMAND LINE ARGUMENTS ----
+if len(sys.argv) != 4:
+    print("Usage: python detect_pipe.py input_file output_file output_png")
+    sys.exit(1)
+
+input_file = sys.argv[1]
+output_file = sys.argv[2]
+output_png = sys.argv[3]
+
+# ---- STEP 1: READ XYZ POINT DATA FROM FILE ----
+def read_points(filename):
     points = []
     with open(filename, 'r') as f:
         for line in f:
-            try:
-                x, y, z = map(float, line.strip().split(',')[:3])
-                points.append((x, y, z))
-            except:
-                continue
+            parts = line.strip().split(',')
+            if len(parts) >= 3:
+                x, y, z = map(float, parts[:3])
+                points.append([x, y, z])
     return np.array(points)
 
-# ------------ Smart Clustering and Best Fit Lines ------------
+points = read_points(input_file)
 
-def smart_partition(points):
-    points2d = points[:, :2]
+# ---- STEP 2: CLUSTER POINTS ALONG AN AXIS ----
+def cluster_by_axis(points, axis_idx, tolerance):
+    
+    sorted_points = points[np.argsort(points[:, axis_idx])]  #sort points along axis
+    clusters = []
+    current_cluster = [sorted_points[0]]
+    current_val = sorted_points[0][axis_idx]
 
-    clustering = DBSCAN(eps=3.0, min_samples=2).fit(points2d)
-    labels = clustering.labels_
-
-    unique_labels = set(labels)
-    segments = []
-
-    for label in unique_labels:
-        if label == -1:
-            continue
-        cluster = points2d[labels == label]
-
-        x_spread = np.max(cluster[:,0]) - np.min(cluster[:,0])
-        y_spread = np.max(cluster[:,1]) - np.min(cluster[:,1])
-
-        if x_spread > y_spread:
-            avg_y = np.mean(cluster[:,1])
-            cluster = np.array([[np.min(cluster[:,0]), avg_y], [np.max(cluster[:,0]), avg_y]])
+    for pt in sorted_points[1:]:
+        if abs(pt[axis_idx] - current_val) <= tolerance:
+            current_cluster.append(pt)
         else:
-            avg_x = np.mean(cluster[:,0])
-            cluster = np.array([[avg_x, np.min(cluster[:,1])], [avg_x, np.max(cluster[:,1])]])
+            clusters.append(np.array(current_cluster))
+            current_cluster = [pt]
+            current_val = pt[axis_idx]
+    clusters.append(np.array(current_cluster))  # add last cluster
+    return clusters
 
-        segments.append(cluster)
+# Cluster points vertically and horizontally
+vertical_clusters = cluster_by_axis(points, axis_idx=0, tolerance=X_TOLERANCE)
+horizontal_clusters = cluster_by_axis(points, axis_idx=1, tolerance=Y_TOLERANCE)
 
-    return segments
+segments = []
 
-# ------------ Run Pass 2 ------------
+# ---- STEP 3: CREATE LINE SEGMENTS FROM CLUSTERS ----
+for cluster in vertical_clusters:
+    if len(cluster) < 2:
+        continue
+    mean_x = np.mean(cluster[:, 0])
+    min_y = np.min(cluster[:, 1])
+    max_y = np.max(cluster[:, 1])
+    z_val = np.mean(cluster[:, 2])
+    segment_length = abs(max_y - min_y)
+    if segment_length >= MIN_SEGMENT_LENGTH:
+        segments.append([mean_x, min_y, mean_x, max_y, z_val, z_val, True])  # True: vertical
 
-def run_pass2(filename):
-    points = read_input(filename)
-    segments = smart_partition(points)
+for cluster in horizontal_clusters:
+    if len(cluster) < 2:
+        continue
+    mean_y = np.mean(cluster[:, 1])
+    min_x = np.min(cluster[:, 0])
+    max_x = np.max(cluster[:, 0])
+    z_val = np.mean(cluster[:, 2])
+    segment_length = abs(max_x - min_x)
+    if segment_length >= MIN_SEGMENT_LENGTH:
+        segments.append([min_x, mean_y, max_x, mean_y, z_val, z_val, False])  # False: horizontal
 
-    keypoints = []
+# ---- STEP 4: SNAP CLOSE ENDPOINTS TO ALIGN THEM ----
+snapped_points = {}  # maps original endpoints to snapped positions
+for i in range(len(segments)):
+    for j in range(len(segments)):
+        if i == j:
+            continue
+        xi1, yi1, xi2, yi2, _, _, _ = segments[i]
+        xj1, yj1, xj2, yj2, _, _, _ = segments[j]
+
+        endpoints_i = [(xi1, yi1), (xi2, yi2)]
+        endpoints_j = [(xj1, yj1), (xj2, yj2)]
+
+        for idx_i, (xi, yi) in enumerate(endpoints_i):
+            for idx_j, (xj, yj) in enumerate(endpoints_j):
+                dx = abs(xi - xj)
+                dy = abs(yi - yj)
+                if dx <= X_TOLERANCE and dy <= Y_TOLERANCE:
+
+                    # Snap to the closer coordinate axis
+                    snap_x = xi if dx < dy else xj
+                    snap_y = yi if dy <= dx else yj
+
+                    # Update segment i endpoint
+                    if idx_i == 0:
+                        snapped_points[(segments[i][0], segments[i][1])] = (snap_x, snap_y)
+                        segments[i][0], segments[i][1] = snap_x, snap_y
+                    else:
+                        snapped_points[(segments[i][2], segments[i][3])] = (snap_x, snap_y)
+                        segments[i][2], segments[i][3] = snap_x, snap_y
+
+                    # Update segment j endpoint
+                    if idx_j == 0:
+                        snapped_points[(segments[j][0], segments[j][1])] = (snap_x, snap_y)
+                        segments[j][0], segments[j][1] = snap_x, snap_y
+                    else:
+                        snapped_points[(segments[j][2], segments[j][3])] = (snap_x, snap_y)
+                        segments[j][2], segments[j][3] = snap_x, snap_y
+
+# ---- STEP 5: STRAIGHTEN SEGMENTS USING SNAP ANCHORS ----
+for idx, seg in enumerate(segments):
+    x1, y1, x2, y2, z1, z2, is_vertical = seg
+
+    anchor = None
+    p1 = (x1, y1)
+    p2 = (x2, y2)
+
+    # Find anchor point if snapped
+    if p1 in snapped_points:
+        anchor = snapped_points[p1]
+    elif p2 in snapped_points:
+        anchor = snapped_points[p2]
+
+    if anchor:
+        anchor_x, anchor_y = anchor
+        if is_vertical:
+            segments[idx][0], segments[idx][2] = anchor_x, anchor_x  # force X constant
+        else:
+            segments[idx][1], segments[idx][3] = anchor_y, anchor_y  # force Y constant
+    else:
+        # No snapped anchor: keep original alignment
+        if is_vertical:
+            segments[idx][0], segments[idx][2] = x1, x1
+        else:
+            segments[idx][1], segments[idx][3] = y1, y1
+
+# ---- STEP 6: ALIGN SEGMENTS AT SHARED CORNERS ----
+corner_points = {}  # maps rounded (x,y) → list of segments touching that corner
+for seg in segments:
+    for coord in [(seg[0], seg[1]), (seg[2], seg[3])]:
+        key = (round(coord[0], 3), round(coord[1], 3))
+        if key not in corner_points:
+            corner_points[key] = []
+        corner_points[key].append(seg)
+
+for (x_key, y_key), touching_segments in corner_points.items():
+    has_horizontal = any(not s[6] for s in touching_segments)
+    has_vertical = any(s[6] for s in touching_segments)
+    for seg in touching_segments:
+        if has_horizontal and not seg[6]:
+            seg[1], seg[3] = y_key, y_key  # align Y for horizontal
+        if has_vertical and seg[6]:
+            seg[0], seg[2] = x_key, x_key  # align X for vertical
+
+# ---- STEP 7: PLOT RESULTS ----
+plt.figure(figsize=(10, 8))
+plt.scatter(points[:, 0], points[:, 1], color='blue', label='Raw Points')
+for seg in segments:
+    x1, y1, x2, y2, _, _, _ = seg
+    plt.plot([x1, x2], [y1, y2], color='red', linewidth=4)
+plt.xlabel('X (cm)')
+plt.ylabel('Y (cm)')
+plt.title('Pipe Path Detection')
+plt.gca().invert_yaxis()  # flip Y axis for top-down view
+plt.axis('equal')
+plt.grid(True)
+plt.savefig(output_png)
+plt.show()
+
+# ---- STEP 8: WRITE FINAL SEGMENTS TO FILE ----
+with open(output_file, 'w') as f:
     for seg in segments:
-        keypoints.append(seg[0])
-    keypoints.append(segments[-1][-1])
-
-    keypoints = np.array(keypoints)
-
-    np.savetxt("pipe_plotting/pass2_simplified.txt", keypoints, fmt="%.4f, %.4f")
-
-    plt.figure(figsize=(10,8))
-    plt.scatter(points[:,0], points[:,1], color='red')
-    for seg in segments:
-        plt.plot(seg[:,0], seg[:,1], linewidth=3)
-    plt.title("Pass 2: Smart Clustered Segments")
-    plt.xlabel("X (cm)")
-    plt.ylabel("Y (cm)")
-    plt.grid(True)
-    plt.axis('equal')
-    plt.tight_layout()
-    plt.savefig("pipe_plotting/pass2_simplified.png")
-    plt.close()
-
-    fig = go.Figure()
-    fig.add_trace(go.Scatter3d(x=points[:,0], y=points[:,1], z=points[:,2], mode='markers'))
-    for seg in segments:
-        fig.add_trace(go.Scatter3d(x=seg[:,0], y=seg[:,1], z=np.full(seg.shape[0],8), mode='lines'))
-    fig.update_layout(title="Pass 2: Smart Clustered Segments 3D", scene=dict(xaxis_title='X', yaxis_title='Y', zaxis_title='Z'))
-    fig.write_html("pipe_plotting/pass2_simplified.html")
-
-# ------------ Final Clean Snap with Real Bend Detection and 90 Degree Correction ------------
-
-def run_pass3(filename):
-    points2d = []
-    with open(filename, 'r') as f:
-        for line in f:
-            try:
-                x, y = map(float, line.strip().split(','))
-                points2d.append((x, y))
-            except:
-                continue
-    points2d = np.array(points2d)
-    z_vals = np.full(points2d.shape[0], 8.0)
-    points = np.column_stack((points2d, z_vals))
-
-    points = points[np.lexsort((-points[:,1], points[:,0]))]
-
-    snapped_path = []
-    A = points[0]
-    snapped_path.append([A[0], A[1], A[2]])
-
-    for i in range(1, len(points)):
-        B = points[i]
-        prev = snapped_path[-1]
-        dx = abs(B[0] - prev[0])
-        dy = abs(B[1] - prev[1])
-        big_movement_threshold = 5.0  # cm
-
-        if dx > big_movement_threshold and dy > big_movement_threshold:
-            # First move horizontally, then vertically
-            snapped_path.append([B[0], prev[1], B[2]])
-            snapped_path.append([B[0], B[1], B[2]])
-        elif dx > big_movement_threshold:
-            snapped_path.append([B[0], prev[1], B[2]])
-        elif dy > big_movement_threshold:
-            snapped_path.append([prev[0], B[1], B[2]])
-
-    snapped_path = np.array(snapped_path)
-
-    np.savetxt("pipe_plotting/pass3_final.txt", snapped_path, fmt="%.4f, %.4f, %.4f")
-
-    plt.figure(figsize=(10,8))
-    plt.plot(snapped_path[:,0], snapped_path[:,1], color='green', marker='o')
-    plt.title("Pass 3: Final Correct 90 Degree Path")
-    plt.xlabel("X (cm)")
-    plt.ylabel("Y (cm)")
-    plt.grid(True)
-    plt.axis('equal')
-    plt.tight_layout()
-    plt.savefig("pipe_plotting/pass3_final.png")
-    plt.close()
-
-    fig = go.Figure()
-    fig.add_trace(go.Scatter3d(x=snapped_path[:,0], y=snapped_path[:,1], z=snapped_path[:,2], mode='lines+markers'))
-    fig.update_layout(title="Pass 3: Final 3D Pipe", scene=dict(xaxis_title='X', yaxis_title='Y', zaxis_title='Z'))
-    fig.write_html("pipe_plotting/pass3_final.html")
-
-# ------------ Runner ------------
-
-def run_all_pipeline():
-    if len(sys.argv) != 2:
-        print("Usage: python process.py <data.txt>")
-        sys.exit(1)
-    input_file = sys.argv[1]
-    run_pass2(input_file)
-    run_pass3("pipe_plotting/pass2_simplified.txt")
-
-def run_all(input_file):
-    run_pass2(input_file)
-    run_pass3("pipe_plotting/pass2_simplified.txt")
-
-if __name__ == "__main__":
-    run_all_pipeline()
+        f.write(f"{seg[0]:.4f}, {seg[1]:.4f}, {seg[2]:.4f}, {seg[3]:.4f}, {seg[4]:.4f}, {seg[5]:.4f}\n")
