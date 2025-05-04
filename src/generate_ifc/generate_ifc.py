@@ -1,6 +1,4 @@
 import ifcopenshell
-import os
-from datetime import datetime
 import math
 
 '''
@@ -13,7 +11,7 @@ PIPE, 1200.1667, 1900.7923, 800.0000, 3700.6447, 1900.7923, 800.0000
 PIPE, 3700.6447, 1900.7923, 800.0000, 3700.6447, 900.0000, 800.0000
 
 '''
-def generate(input_file):
+def generate(input_file, output_file):
     # -------- Parse input
     #input_file = "coordsForIfc.txt"
     custom_pipe_segments = []
@@ -214,10 +212,10 @@ def generate(input_file):
         pipe_counter += 1
 
     # -------- Export IFC
-    output_dir = "outputted_ifc"
-    os.makedirs(output_dir, exist_ok=True)
-    timestamp_for_file = datetime.now().strftime("%m%d%y_%H%M")
-    output_file = os.path.join(output_dir, f"wall_with_pipes_{timestamp_for_file}.ifc")
+    # output_dir = 'generate_ifc/output_ifc'
+    # os.makedirs(output_dir, exist_ok=True)
+    # timestamp_for_file = datetime.now().strftime("%m%d%y_%H%M")
+    # output_file = os.path.join(output_dir, f"wall_with_pipes_{timestamp_for_file}.ifc")
     model.write(output_file)
 
     print(f"IFC file created and saved as: {output_file}")
