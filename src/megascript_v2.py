@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import numpy as np
 import os
-import subprocess
 
 import pipe_plotting.process_points as proc
 import generate_ifc.generate_ifc as ifc
@@ -21,13 +20,29 @@ elif platform.startswith('linux'):
 wlbt = SourceFileLoader('WalabotAPI', modulePath).load_module()
 wlbt.Init()
 
+# set up directories, files, and locations
 timestamp_for_file = datetime.now().strftime("%m%d%y_%H%M")
-output_dir = 'walabotOut_txt'
-makedirs(output_dir, exist_ok=True)
-unprocessed_filename = join(output_dir, f'walabotOut_{timestamp_for_file}.txt')
-clean_filename = join(output_dir, f'walabotClean_{timestamp_for_file}.txt')
-ifcCoords_filename = join('generate_ifc/coordinates', f'coordsForifc_{timestamp_for_file}.txt')
-pass_file = join('pipe_plotting', 'pass3_final.txt')
+output_dir1 = 'walabotOut_txt'
+makedirs(output_dir1, exist_ok=True)
+unprocessed_filename = join(output_dir1, f'walabotOut_{timestamp_for_file}.txt')
+cleaned_filename = join(output_dir1, f'walabotClean_{timestamp_for_file}.txt')
+
+output_dir2 = 'pipe_plotting/pipeOut_txt'
+makedirs(output_dir2, exist_ok=True)
+processed_filename = join(output_dir2, f'segments_{timestamp_for_file}.txt')
+
+output_dir3 = 'pipe_plotting/pipeOut_plots'
+makedirs(output_dir3, exist_ok=True)
+processed_plot_png = join(output_dir3, f'{timestamp_for_file}.png')
+
+output_dir4 = 'generate_ifc/input_labelled'
+makedirs(output_dir4, exist_ok=True)
+ifcCoords_filename = join(output_dir4, f'coordsForifc_{timestamp_for_file}.txt')
+
+output_dir5 = 'generate_ifc/output_ifc'
+makedirs(output_dir5, exist_ok=True)
+ifc_filename = join(output_dir5, f"wall_with_pipes_{timestamp_for_file}.ifc")
+
 
 def read_data(filename):
     x, y, z, is_hit = [], [], [], []
@@ -167,60 +182,67 @@ def InWallApp():
             # read uncleaned data
             x, y, z, is_hit = read_data(unprocessed_filename)
 
-            # before data is cleaned, grab the max xyz of all data collected (even when no target) to get wall dimensions
-            wall_dim = (max(x), max(y), max(z) - 6) #max(z) always 8, so subtract 6 to get 2cm thick wall
-
             # transforms -y to +y and make so min(y) is always 0
             low_y = min(y)
             if low_y < 0:
                 for i in range(len(y)):
-                    y[i] += low_y
+                    y[i] -= low_y
 
-            # with open(clean_filename, 'a') as f:
-            #     for i in range(len(y)):
-            #         if is_hit[i]:
-            #             line = f"{x[i]}, {y[i]}, {z[i]}"
-            #             f.write(line + '\n')
+            # before data is cleaned and after y all made positive, grab the max xyz of all data collected (even if no target) to get wall dimensions
+            wall_dim = (max(x), max(y), max(z) - 6) #max(z) always 8, so subtract 6 to get 2cm thick wall
 
-            # clean the unprocessed data by getting rid of No Target Detected x: y: z: and cm
-            with open(unprocessed_filename, "r") as infile, open(clean_filename, "w") as outfile:
+            # clean the unprocessed data by getting rid of No Target Detected x: y: z: cm, and a: with anything after it
+            with open(unprocessed_filename, "r") as infile, open(cleaned_filename, "w") as outfile:
                 for line in infile:
                     # Skip lines containing "No Target Detected"
                     if "No Target Detected" in line:
                         continue                    
-                    # Remove "x:", "y:", "z:", and any extra spaces
                     cleaned_line = (
-                        line.replace("x:", "")
-                            .replace("y:", "")
-                            .replace("z:", "")
-                            .replace("cm", "")  # Remove "cm" if present
+                        line.split("a:")[0]  # Remove "a:" and anything after it
+                            .replace("x: ", "")
+                            .replace(" y:", "")
+                            .replace(" z:", "")
+                            .replace("cm", "")
                             .strip()
-                    )            
-                    # Write the cleaned line to the output file
+                    )           
                     outfile.write(cleaned_line + "\n")
-            
+
             # Input cleaned data through ML algorithm
-            proc.run_all(clean_filename) #gives ML processed points as /pipe_plotting/pass3_final.txt
+            proc.run_all(cleaned_filename, processed_filename, processed_plot_png) #saves ML processed points as /pipe_plotting/segments_{time}.txt
 
-            # Read start and end points of pipe segments in pass3_final.txt determined by ML algorithm 
-            points = proc.read_input(pass_file)
-
-            # Write wall_dim and pipe segment points in correct format 
-            with open(ifcCoords_filename, 'a') as f:
+            # reformat segments.txt for ifcCoords.txt, aka make all negative y positive
+            with open(processed_filename, 'r') as infile, open(ifcCoords_filename, 'w') as outfile:
+                # Write in wall dimensions that were collected a little earlier in this program file
                 line = f'WALL, {wall_dim[0]}, {wall_dim[1]}, {wall_dim[2]}'
-                f.write(line + '\n')
-                for p in range(len(points) - 1):
-                    x = points[p][0]
-                    y = points[p][1]
-                    z = points[p][2]
-                    x1 = points[p + 1][0]
-                    y1 = points[p + 1][1]
-                    z1 = points[p + 1][2]
-                    line = f'PIPE, {x}, {y}, {z}, {x1}, {y1}, {z1}'
-                    f.write(line +'\n')
-            
+                outfile.write(line + '\n')
+
+                lines = infile.readlines()
+                y_values = []
+
+                # Collect all y1 and y2 values to determine the minimum y
+                for line in lines:
+                    parts = line.strip().split(',')
+                    y1 = float(parts[1])
+                    y2 = float(parts[4])
+                    y_values.extend([y1, y2])
+
+                # Find the minimum y value
+                low_y = min(y_values)
+
+                # If the minimum y is negative, adjust all y values
+                for line in lines:
+                    parts = line.strip().split(',')
+                    x1, y1, z1, x2, y2, z2 = map(float, parts)
+
+                    if low_y < 0:
+                        y1 -= low_y
+                        y2 -= low_y
+
+                    # Write the adjusted line to the output file
+                    outfile.write(f"PIPE, {x1}, {y1}, {z1}, {x2}, {y2}, {z2}\n")
+
             # Input reformatted data into ifc generation program
-            ifc.generate(ifcCoords_filename)
+            ifc.generate(ifcCoords_filename, ifc_filename)
 
         elif response == "4":
             break
