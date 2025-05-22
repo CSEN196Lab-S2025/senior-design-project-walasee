@@ -1,4 +1,4 @@
-# WalaSee
+# Revit WalaSee
 SCU Senior Design 2024-25, WalaSee
 
 BEFORE YOU MAKE ANY CHANGES TO YOUR CODE rebase your git branch using commands below:
