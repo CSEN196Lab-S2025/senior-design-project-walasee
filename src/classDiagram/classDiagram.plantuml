@@ -6,7 +6,7 @@ top to bottom direction
 
 ' Main application logic
 package "Main Script" {
-  class InWallApp {
+  class WalaSeeApp {
     +read_data()
     +plot_data_matplotlib()
     +plot_data_plotly()
@@ -78,7 +78,7 @@ package "WalabotAPI" {
 }
 
 ' Dependencies
-InWallApp ..> wlbt : uses
-InWallApp ..> proc : uses
-InWallApp ..> ifc : uses
+WalaSeeApp ..> wlbt : uses
+WalaSeeApp ..> proc : uses
+WalaSeeApp ..> ifc : uses
 @enduml
