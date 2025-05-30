@@ -17,7 +17,8 @@ if platform == 'win32':
 elif platform.startswith('linux'):
     modulePath = join('/usr', 'share', 'walabot', 'python', 'WalabotAPI.py')
 
-wlbt = SourceFileLoader('WalabotAPI', modulePath).load_module()
+#WalabotAPI module is dynamically loaded and referenced as wlbt, singleton-like object
+wlbt = SourceFileLoader('WalabotAPI', modulePath).load_module()  # load_module is deprecated, use exec_module() instead?
 wlbt.Init()
 
 # set up directories, files, and locations
@@ -107,7 +108,7 @@ def PrintSensorTargets(targets, xL, yL):
             print(line)
             f.write(line + '\n')
 
-def InWallApp():
+def WalaSeeApp():
     xArenaMin, xArenaMax, xArenaRes = -3, 4, 0.5
     yArenaMin, yArenaMax, yArenaRes = -6, 4, 0.5
     zArenaMin, zArenaMax, zArenaRes = 3, 8, 0.5
@@ -256,4 +257,4 @@ def InWallApp():
     print('Terminated successfully')
 
 if __name__ == '__main__':
-    InWallApp()
+    WalaSeeApp()
