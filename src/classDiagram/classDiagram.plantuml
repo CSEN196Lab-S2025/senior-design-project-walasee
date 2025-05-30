@@ -1,0 +1,84 @@
+@startuml Revit_WalaSee
+skinparam style strictuml
+skinparam componentStyle rectangle
+top to bottom direction
+
+
+' Main application logic
+package "Main Script" {
+  class InWallApp {
+    +read_data()
+    +plot_data_matplotlib()
+    +plot_data_plotly()
+    +PrintSensorTargets()
+  }
+}
+
+' External module: process_points
+package "pipe_plotting.process_points" {
+  class proc {
+    +read_points()
+    +cluster_by_axis()
+    +run_all()
+  }
+
+  note bottom of proc
+    - Reads x, y, z data
+    - Clusters and aligns pipes
+    - Plots with matplotlib
+    - Outputs segments.txt
+  end note
+}
+
+' External module: generate_ifc
+package "generate_ifc.generate_ifc" {
+  class ifc {
+    +generate(input_file, output_file)
+  }
+
+  note bottom of ifc
+    - Parses WALL and PIPE from input file
+    - Uses ifcopenshell to create:
+      * IfcWallStandardCase
+      * IfcPipeSegment(s)
+      * IfceRelAggregates
+      * IfcShapeRepresentation
+    - Outputs wall_with_pipes.ifc
+  end note
+}
+
+' External modeule: WalabotAPI
+' wlbt = dynamic instance of Walabot API module
+package "WalabotAPI" {
+  class wlbt {
+    +Init()
+    +Initialize()
+    +ConnectAny()
+    +SetProfile()
+    +SetArenaX()
+    +SetArenaY()
+    +SetArenaZ()
+    +SetDynamicImageFilter()
+    +SetThreshold()
+    +Start()
+    +StartCalibration()
+    +Trigger()
+    +GetStatus()
+    +GetImagingTargets()
+    +GetRawImageSlice()
+    +Stop()
+    +Disconnect()
+    +Clean()
+  }
+  note bottom of wlbt 
+    - wlbt is dynamically loaded via SourceFileLoader
+    - The functions called interface with the Walabot hardware
+    - Provides imaging, scanning, and calibration APIs
+  end note
+}
+
+' Dependencies
+InWallApp ..> wlbt : uses
+InWallApp ..> proc : uses
+InWallApp ..> ifc : uses
+@enduml
